@@ -26,6 +26,11 @@ AGENT_MAX_TURNS = int(os.getenv("AGENT_MAX_TURNS", "40"))
 PROGRESS_INTERVAL_SECONDS = int(os.getenv("PROGRESS_INTERVAL_SECONDS", "30"))
 BASH_TIMEOUT_SECONDS = int(os.getenv("BASH_TIMEOUT_SECONDS", "120"))
 
+# Telegram-specific optimization settings
+TELEGRAM_OPTIMIZE = os.getenv("TELEGRAM_OPTIMIZE", "true").lower() == "true"
+TELEGRAM_MAX_TOKENS = int(os.getenv("TELEGRAM_MAX_TOKENS", "4096"))  # Reduced from 8096
+TELEGRAM_REQUEST_DELAY = float(os.getenv("TELEGRAM_REQUEST_DELAY", "0.5"))  # Seconds between requests
+
 # Parse allowed user IDs
 def parse_allowed_ids(raw: str) -> set[int]:
     """Parse comma-separated Telegram user IDs."""

@@ -149,6 +149,7 @@ async def run_review_task(
                 messages=messages,
                 tools=TOOLS,
                 progress_callback=progress_callback,
+                source="telegram",  # Use optimized settings for Telegram
             )
 
             if result_text.strip().startswith(ASK_USER_PREFIX):

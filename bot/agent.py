@@ -4,7 +4,14 @@ import asyncio
 import logging
 from typing import Callable
 import anthropic
-from config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, AGENT_MAX_TURNS
+from config import (
+    ANTHROPIC_API_KEY,
+    ANTHROPIC_MODEL,
+    AGENT_MAX_TURNS,
+    TELEGRAM_OPTIMIZE,
+    TELEGRAM_MAX_TOKENS,
+    TELEGRAM_REQUEST_DELAY,
+)
 from tools import dispatch_tool, TOOLS
 
 logger = logging.getLogger(__name__)
@@ -35,6 +42,7 @@ async def run_agent(
     messages: list[dict],
     tools: list[dict],
     progress_callback: Callable[[str], any],
+    source: str = "telegram",
 ) -> str:
     """
     Run the agentic loop using Anthropic API.
@@ -44,10 +52,19 @@ async def run_agent(
         messages: List of messages in Anthropic format
         tools: List of tool definitions
         progress_callback: Async callback to report progress
+        source: "telegram" or "cli" - determines optimization level
 
     Returns:
         Final text response from the agent
     """
+    # Use optimized settings for Telegram, full settings for CLI
+    if source == "telegram" and TELEGRAM_OPTIMIZE:
+        max_tokens = TELEGRAM_MAX_TOKENS
+        request_delay = TELEGRAM_REQUEST_DELAY
+    else:
+        max_tokens = 8096
+        request_delay = 0
+
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     turn_count = 0
@@ -55,10 +72,14 @@ async def run_agent(
     while turn_count < AGENT_MAX_TURNS:
         turn_count += 1
 
+        # Add delay between requests for Telegram to avoid rate limiting
+        if request_delay > 0:
+            await asyncio.sleep(request_delay)
+
         try:
             response = client.messages.create(
                 model=ANTHROPIC_MODEL,
-                max_tokens=8096,
+                max_tokens=max_tokens,
                 system=system_prompt,
                 messages=messages,
                 tools=tools,
