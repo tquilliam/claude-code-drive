@@ -18,9 +18,9 @@ database.init_db()
 
 # Welcome message
 WELCOME_MESSAGE = """
-🤖 **Welcome to Website Analysis Bot!**
+🤖 **Welcome to Marketing Bot!**
 
-I help you analyze websites using AI-powered SEO, CRO, and content reviews.
+I help you analyze and optimize your website using AI-powered SEO, CRO, and content reviews.
 
 **Available Commands:**
 
