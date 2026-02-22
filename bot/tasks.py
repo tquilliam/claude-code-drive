@@ -17,6 +17,55 @@ _user_reply_queues: dict[int, asyncio.Queue] = {}
 
 ASK_USER_PREFIX = "ASK_USER:"
 
+# Friendly progress messages for different tool operations
+PROGRESS_MESSAGES = {
+    "fetch_page": "📄 Fetching page content",
+    "crawl_site": "🕷️ Crawling website",
+    "bash": "⚙️ Processing data",
+    "read": "📖 Reading files",
+    "write": "💾 Saving results",
+    "glob": "🔍 Finding files",
+    "grep": "🔎 Searching content",
+}
+
+ANALYSIS_STAGES = [
+    "🔍 Analyzing page structure",
+    "📊 Evaluating SEO metrics",
+    "🎯 Assessing CRO factors",
+    "✍️ Reviewing content quality",
+    "💡 Generating recommendations",
+    "📋 Compiling report",
+]
+
+_stage_counter = 0
+
+
+def _get_friendly_progress(tool_name: str, tool_input: str) -> str:
+    """Convert technical tool call into friendly user message."""
+    global _stage_counter
+
+    # Extract operation type from tool input
+    if "fetch_page" in tool_input.lower():
+        return "📄 Fetching page content..."
+    elif "crawl" in tool_input.lower():
+        return "🕷️ Crawling website pages..."
+    elif "python3 scripts/" in tool_input.lower():
+        if "fetch" in tool_input:
+            return "📄 Fetching page data..."
+        elif "crawl" in tool_input:
+            return "🕷️ Crawling site structure..."
+
+    # Show analysis stages
+    if _stage_counter < len(ANALYSIS_STAGES):
+        msg = ANALYSIS_STAGES[_stage_counter]
+        if _stage_counter < len(ANALYSIS_STAGES) - 1:
+            _stage_counter += 1
+        return msg
+
+    # Fallback to tool-specific message
+    tool_short = tool_name.split("(")[0].strip()
+    return PROGRESS_MESSAGES.get(tool_short, "⚙️ Processing...")
+
 
 def enqueue_user_reply(telegram_id: int, text: str):
     """Enqueue a user reply for a pending task."""
@@ -52,17 +101,20 @@ async def run_review_task(
 
     async def progress_callback(line: str):
         nonlocal last_progress_at
-        progress_lines.append(line)
-        # Keep only last 5 progress lines
-        display = progress_lines[-5:]
+        # Convert technical tool call to friendly message
+        friendly_msg = _get_friendly_progress("", line)
+        progress_lines.append(friendly_msg)
+        # Keep only last 3 progress lines
+        display = progress_lines[-3:]
         now = time.monotonic()
         if now - last_progress_at >= PROGRESS_INTERVAL_SECONDS:
             last_progress_at = now
             try:
+                status_text = "⏳ Working on your review...\n\n" + "\n".join(display)
                 await bot.edit_message_text(
                     chat_id=chat_id,
                     message_id=status_message.message_id,
-                    text="Working on your review...\n\n" + "\n".join(f"- {l}" for l in display),
+                    text=status_text,
                 )
             except Exception:
                 pass  # Ignore edit failures (message too old, etc.)
