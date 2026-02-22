@@ -6,5 +6,9 @@ startCommand = "python bot/main.py"
 restartPolicyType = "always"
 restartPolicyMaxRetries = 10
 
+[[services.storage]]
+mountPath = "/data"
+size = "1Gi"
+
 [environments.production]
 # Environment variables are set in Railway dashboard, not here
