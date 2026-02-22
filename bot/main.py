@@ -16,6 +16,47 @@ logger = logging.getLogger(__name__)
 # Initialize database
 database.init_db()
 
+# Welcome message
+WELCOME_MESSAGE = """
+🤖 **Welcome to Website Analysis Bot!**
+
+I help you analyze websites using AI-powered SEO, CRO, and content reviews.
+
+**Available Commands:**
+
+📄 `/review_page <url>`
+Analyze a single page for SEO, CRO, and content quality
+_Example: `/review_page https://example.com`_
+
+📋 `/brief <description>`
+Get a general analysis with auto-detection of scope
+_Example: `/brief Analyze homepage for SEO issues`_
+
+📊 `/social_review [brand]`
+Analyze Meta social media performance (campaigns & organic)
+_Example: `/social_review my-brand`_
+
+**How It Works:**
+1️⃣ Send a command with your request
+2️⃣ Bot analyzes and shows progress updates
+3️⃣ Get a summary + detailed report file
+
+**Tips:**
+• Detailed results are sent as file attachments
+• Reviews typically take 5-10 minutes
+• You can use conversation history for context ("do the same for...")
+
+Ready to analyze? Send a command! 🚀
+"""
+
+
+async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /start command - show welcome message."""
+    await update.message.reply_text(
+        WELCOME_MESSAGE,
+        parse_mode="Markdown",
+    )
+
 
 async def check_access(update: Update) -> bool:
     """Check if user is allowed and register them."""
@@ -110,6 +151,7 @@ def main():
     app = Application.builder().token(config.TELEGRAM_BOT_TOKEN).build()
 
     # Command handlers
+    app.add_handler(CommandHandler("start", cmd_start))
     app.add_handler(CommandHandler("review_page", cmd_review_page))
     app.add_handler(CommandHandler("brief", cmd_brief))
     app.add_handler(CommandHandler("social_review", cmd_social_review))
