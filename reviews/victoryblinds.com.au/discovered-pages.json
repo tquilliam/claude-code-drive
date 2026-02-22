@@ -1,0 +1,360 @@
+{
+  "domain": "victoryblinds.com.au",
+  "base_url": "https://victoryblinds.com.au",
+  "crawl_date": "2026-02-22",
+  "total_pages": 50,
+  "max_pages_limit": 50,
+  "max_depth_limit": 2,
+  "pages": [
+    {
+      "url": "https://victoryblinds.com.au/",
+      "slug": "homepage",
+      "source": "link-follow",
+      "depth": 0,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/about",
+      "slug": "about",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/advice",
+      "slug": "advice",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds",
+      "slug": "blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/bedroom-blinds",
+      "slug": "blinds-bedroom-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/blockout-blinds",
+      "slug": "blinds-blockout-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/childrens-blinds",
+      "slug": "blinds-childrens-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/honeycomb-blinds",
+      "slug": "blinds-honeycomb-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/kitchen-blinds",
+      "slug": "blinds-kitchen-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/panel-blinds",
+      "slug": "blinds-panel-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/roller-blinds",
+      "slug": "blinds-roller-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/roman-blinds",
+      "slug": "blinds-roman-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/venetian-blinds",
+      "slug": "blinds-venetian-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/veri-shades",
+      "slug": "blinds-veri-shades",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/blinds/vertical-blinds",
+      "slug": "blinds-vertical-blinds",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/contact-us",
+      "slug": "contact-us",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/cookie-policy",
+      "slug": "cookie-policy",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains",
+      "slug": "curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/bedroom-curtains",
+      "slug": "curtains-bedroom-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/blockout-curtains",
+      "slug": "curtains-blockout-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/childrens-curtains",
+      "slug": "curtains-childrens-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/electric-curtains",
+      "slug": "curtains-electric-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/living-room-curtains",
+      "slug": "curtains-living-room-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/pencil-pleat-curtains",
+      "slug": "curtains-pencil-pleat-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/pinch-pleat-curtains",
+      "slug": "curtains-pinch-pleat-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/curtains/sheer-curtains",
+      "slug": "curtains-sheer-curtains",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/join-the-team",
+      "slug": "join-the-team",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations",
+      "slug": "locations",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations/adelaide",
+      "slug": "locations-adelaide",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations/brisbane",
+      "slug": "locations-brisbane",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations/geelong",
+      "slug": "locations-geelong",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations/gold-coast",
+      "slug": "locations-gold-coast",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/locations/melbourne",
+      "slug": "locations-melbourne",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/modern-slavery-statement",
+      "slug": "modern-slavery-statement",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/aluminium-shutters",
+      "slug": "outdoor-aluminium-shutters",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings",
+      "slug": "outdoor-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/alpha-awnings",
+      "slug": "outdoor-awnings-alpha-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/auto-awnings",
+      "slug": "outdoor-awnings-auto-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/fixed-guide-awnings",
+      "slug": "outdoor-awnings-fixed-guide-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/folding-arm-awnings",
+      "slug": "outdoor-awnings-folding-arm-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/spring-roller-awnings",
+      "slug": "outdoor-awnings-spring-roller-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/straight-drop-awnings",
+      "slug": "outdoor-awnings-straight-drop-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/awnings/wire-guide-awnings",
+      "slug": "outdoor-awnings-wire-guide-awnings",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/outdoor/roller-shutters",
+      "slug": "outdoor-roller-shutters",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/privacy-policy",
+      "slug": "privacy-policy",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/shutters",
+      "slug": "shutters",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/shutters/pvc-shutters",
+      "slug": "shutters-pvc-shutters",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/shutters/timber-shutters",
+      "slug": "shutters-timber-shutters",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/terms-and-conditions",
+      "slug": "terms-and-conditions",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    },
+    {
+      "url": "https://victoryblinds.com.au/warranty",
+      "slug": "warranty",
+      "source": "link-follow",
+      "depth": 1,
+      "status": 200
+    }
+  ]
+}

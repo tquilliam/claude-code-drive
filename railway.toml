@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "python bot/main.py"
+restartPolicyType = "always"
+restartPolicyMaxRetries = 10
+
+[environments.production]
+# Environment variables are set in Railway dashboard, not here

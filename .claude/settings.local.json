@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gdrive version:*)",
+      "Bash(pip3 list:*)",
+      "Bash(python3 -m pip:*)",
+      "Bash(pip3 install:*)"
+    ]
+  }
+}

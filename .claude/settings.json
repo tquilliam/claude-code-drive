@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/*)",
+      "Bash(curl -I *)",
+      "Bash(curl -sI *)",
+      "Bash(gdrive *)",
+      "Bash(mkdir -p reviews/*)",
+      "Bash(ls reviews/*)",
+      "Bash(mkdir -p social-reviews/*)",
+      "Bash(ls social-reviews/*)",
+      "Bash(mkdir -p brands)",
+      "Bash(ls brands/*)"
+    ]
+  }
+}
