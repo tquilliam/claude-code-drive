@@ -129,7 +129,7 @@ def register_user(telegram_id: int, username: str | None):
     """Register or update a user."""
     with get_connection() as conn:
         existing = conn.execute(
-            "SELECT id FROM users WHERE telegram_id = ?", (telegram_id,)
+            "SELECT telegram_id FROM users WHERE telegram_id = ?", (telegram_id,)
         ).fetchone()
         if existing:
             conn.execute(
