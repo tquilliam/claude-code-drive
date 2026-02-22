@@ -52,13 +52,16 @@ async def run_agent(
     while turn_count < AGENT_MAX_TURNS:
         turn_count += 1
 
-        response = client.messages.create(
-            model=ANTHROPIC_MODEL,
-            max_tokens=8096,
-            system=system_prompt,
-            messages=messages,
-            tools=tools,
-        )
+        try:
+            response = client.messages.create(
+                model=ANTHROPIC_MODEL,
+                max_tokens=8096,
+                system=system_prompt,
+                messages=messages,
+                tools=tools,
+            )
+        except Exception as e:
+            return f"[ERROR] Anthropic API error: {str(e)}"
 
         # Append assistant response to message history
         messages.append({"role": "assistant", "content": response.content})
