@@ -20,9 +20,9 @@ database.init_db()
 WELCOME_MESSAGE = """
 🤖 **Welcome to Marketing Bot!**
 
-I help you analyze and optimize your website using AI-powered SEO, CRO, and content reviews.
+Your AI-powered marketing assistant for website optimization, social media analysis, and more.
 
-**Available Commands:**
+**Current Features:**
 
 📄 `/review_page <url>`
 Analyze a single page for SEO, CRO, and content quality
@@ -46,7 +46,10 @@ _Example: `/social_review my-brand`_
 • Reviews typically take 5-10 minutes
 • You can use conversation history for context ("do the same for...")
 
-Ready to analyze? Send a command! 🚀
+**Coming Soon:**
+More marketing analysis tools and features! 🚀
+
+Ready to optimize? Send a command!
 """
 
 
