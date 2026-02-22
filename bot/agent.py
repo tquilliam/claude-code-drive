@@ -1,10 +1,13 @@
 """Anthropic agentic loop - tool-calling loop for reviews."""
 
 import asyncio
+import logging
 from typing import Callable
 import anthropic
 from config import ANTHROPIC_API_KEY, ANTHROPIC_MODEL, AGENT_MAX_TURNS
 from tools import dispatch_tool, TOOLS
+
+logger = logging.getLogger(__name__)
 
 
 def _summarize_tool_input(input_dict: dict | str) -> str:
@@ -60,8 +63,13 @@ async def run_agent(
                 messages=messages,
                 tools=tools,
             )
+        except anthropic.BadRequestError as e:
+            logger.error(f"Anthropic BadRequest (400): {e}")
+            logger.error(f"Error message: {e.message if hasattr(e, 'message') else str(e)}")
+            return f"[ERROR] API error: {str(e)[:200]}"
         except Exception as e:
-            return f"[ERROR] Anthropic API error: {str(e)}"
+            logger.error(f"Anthropic API error: {type(e).__name__}: {e}")
+            return f"[ERROR] Unexpected error: {str(e)[:200]}"
 
         # Append assistant response to message history
         messages.append({"role": "assistant", "content": response.content})
